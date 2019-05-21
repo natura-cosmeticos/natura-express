@@ -1,7 +1,6 @@
 const { EventEmitter } = require('events');
 
 const BaseCommand = require('./base-command');
-const { unauthorized } = require('../base-events');
 
 const invalidAuthorizationError = {
   message: 'authorization.invalid',
@@ -25,7 +24,7 @@ module.exports = class AuthenticationCommand extends BaseCommand {
 
   async execute(args) {
     if (!this.authorizationProvider.isValid()) {
-      this.emit(unauthorized, invalidAuthorizationError);
+      this.emit('unauthorized', invalidAuthorizationError);
 
       return;
     }

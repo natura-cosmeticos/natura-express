@@ -44,10 +44,10 @@
     "all": true,
     "check-coverage": true,
     "per-file": false,
-    "lines": 90,
-    "statements": 90,
-    "functions": 90,
-    "branches": 90,
+    "lines":  85,
+    "statements": 85,
+    "functions": 87,
+    "branches": 77,
     "include": [
       "src/**/*.js"
     ],
@@ -56,7 +56,6 @@
       "src/message-queue/**/*.js",
       "src/module.js",
       "src/orm/**/*.js",
-      "src/tests/mocha-helpers.js",
       "test/**/*.js"
     ],
     "reporter": [
