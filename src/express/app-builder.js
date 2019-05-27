@@ -7,8 +7,6 @@ const expressContextMiddleware = require('../express/context-middleware');
 const expressLoggingMiddleware = require('../express/logging-middleware');
 const expressCorsMiddleware = require('./cors-middleware');
 
-const NodeInspector = require('../development/node-inspector');
-
 /**
  * The Express HTTP port for development mode
  */
@@ -72,9 +70,6 @@ module.exports = function expressAppBuilder(options = {}) {
   const app = express();
 
   setupAppMiddlewares(app, options);
-
-  /* istanbul ignore if */
-  if (options.developmentMode) new NodeInspector().start();
 
   return {
     expressApp: app,
