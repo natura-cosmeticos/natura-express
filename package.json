@@ -1,0 +1,95 @@
+{
+  "main": "index.js",
+  "name": "@naturacosmeticos/node-base",
+  "author": "Natura Cosméticos <TDDAArquitetura@natura.net>",
+  "version": "1.1.13",
+  "engines": {
+    "node": ">= 8.1.0"
+  },
+  "contributors": [
+    "Bruno Cartolari <cartola@vizir.com.br>",
+    "Edison Cury Neto <edison.cury.neto@accenture.com>",
+    "Fabrício Campos <fabricio@vizir.com.br>",
+    "João Paulo Nobrega <joao.paulo.nobrega@avanade.com>",
+    "Handrus Stephan Nogueira <handrus@gmail.com>"
+  ],
+  "devDependencies": {
+    "@naturacosmeticos/eslint-config-natura": "^1.0.0",
+    "chai": "^4.1.2",
+    "esdoc": "^1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-node": "^1.0.3",
+    "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^5.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "faker": "^4.1.0",
+    "husky": "^1.0.0-rc.13",
+    "mocha": "^5.2.0",
+    "nyc": "^11.9.0",
+    "sinon": "^5.1.1",
+    "supertest": "^3.1.0"
+  },
+  "scripts": {
+    "docs": "./node_modules/.bin/esdoc -c .esdoc.json",
+    "lint": "eslint src/ test/",
+    "lint:fix": "eslint --fix src/ test/",
+    "test": "mocha --recursive --require test/helpers/start.js --exit",
+    "test:unit": "mocha --recursive --require test/helpers/start.js",
+    "test:coverage": "nyc mocha --recursive --require test/helpers/start.js",
+    "test:watch": "mocha -w",
+    "transpile": "echo ok",
+    "package": "bash package.sh"
+  },
+  "nyc": {
+    "all": true,
+    "check-coverage": true,
+    "per-file": false,
+    "lines":  85,
+    "statements": 85,
+    "functions": 87,
+    "branches": 77,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/development/*inspector*.js",
+      "src/message-queue/**/*.js",
+      "src/module.js",
+      "src/orm/**/*.js",
+      "test/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "report-dir": "./coverage"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test",
+      "pre-push": "npm run lint && npm test"
+    }
+  },
+  "dependencies": {
+    "highlight.js": "9.14.2",
+    "@naturacosmeticos/clio-nodejs-logger": "^1.2.5",
+    "aws-sdk": "^2.294.0",
+    "aws-serverless-express": "^3.2.0",
+    "bluebird": "^3.5.2",
+    "body-parser": "^1.18.3",
+    "commander": "^2.17.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0",
+    "humps": "^2.0.1",
+    "inspector-proxy": "^1.2.1",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "typeorm": "^0.2.6",
+    "uuid": "^3.3.2",
+    "yargs": "^13.0.0-candidate.0"
+  },
+  "homepage": "https://github.com/natura-cosmeticos/node-base#readme",
+  "bugs": "https://github.com/natura-cosmeticos/node-base/issues",
+  "license": "MIT"
+}
