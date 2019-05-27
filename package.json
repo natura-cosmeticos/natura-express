@@ -44,8 +44,8 @@
     "per-file": false,
     "lines": 85,
     "statements": 85,
-    "functions": 87,
-    "branches": 77,
+    "functions": 85,
+    "branches": 85,
     "include": [
       "src/**/*.js"
     ],
