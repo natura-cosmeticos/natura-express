@@ -1,16 +1,7 @@
 const humps = require('humps');
 const _ = require('lodash');
-const httpStatusEnum = require('./http-status-enum');
-
-const baseEvents = {
-  error: 'error',
-  forbidden: 'forbidden',
-  noContent: 'noContent',
-  notFound: 'notFound',
-  success: 'success',
-  unauthorized: 'unauthorized',
-  validationFailed: 'validationFailed',
-};
+const httpStatusEnum = require('./enums/http-status-enum');
+const baseEvents = require('./enums/base-events');
 
 /**
  * HTTP methods that can have body attribute

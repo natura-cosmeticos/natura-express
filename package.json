@@ -1,6 +1,6 @@
 {
   "main": "index.js",
-  "name": "@naturacosmeticos/node-base",
+  "name": "@naturacosmeticos/natura-express",
   "author": "Natura Cosméticos <TDDAArquitetura@natura.net>",
   "version": "1.1.13",
   "engines": {
@@ -33,29 +33,23 @@
     "docs": "./node_modules/.bin/esdoc -c .esdoc.json",
     "lint": "eslint src/ test/",
     "lint:fix": "eslint --fix src/ test/",
-    "test": "mocha --recursive --require test/helpers/start.js --exit",
-    "test:unit": "mocha --recursive --require test/helpers/start.js",
-    "test:coverage": "nyc mocha --recursive --require test/helpers/start.js",
-    "test:watch": "mocha -w",
-    "transpile": "echo ok",
-    "package": "bash package.sh"
+    "test": "mocha --recursive --exit",
+    "test:unit": "mocha --recursive",
+    "test:coverage": "nyc mocha --recursive",
+    "test:watch": "mocha -w"
   },
   "nyc": {
     "all": true,
     "check-coverage": true,
     "per-file": false,
-    "lines":  85,
+    "lines": 85,
     "statements": 85,
-    "functions": 87,
-    "branches": 77,
+    "functions": 85,
+    "branches": 85,
     "include": [
       "src/**/*.js"
     ],
     "exclude": [
-      "src/development/*inspector*.js",
-      "src/message-queue/**/*.js",
-      "src/module.js",
-      "src/orm/**/*.js",
       "test/**/*.js"
     ],
     "reporter": [
@@ -71,25 +65,18 @@
     }
   },
   "dependencies": {
-    "highlight.js": "9.14.2",
     "@naturacosmeticos/clio-nodejs-logger": "^1.2.5",
-    "aws-sdk": "^2.294.0",
     "aws-serverless-express": "^3.2.0",
-    "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
-    "commander": "^2.17.1",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "helmet": "^3.13.0",
     "humps": "^2.0.1",
-    "inspector-proxy": "^1.2.1",
-    "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.10",
-    "typeorm": "^0.2.6",
     "uuid": "^3.3.2",
     "yargs": "^13.0.0-candidate.0"
   },
-  "homepage": "https://github.com/natura-cosmeticos/node-base#readme",
-  "bugs": "https://github.com/natura-cosmeticos/node-base/issues",
+  "homepage": "https://github.com/natura-cosmeticos/natura-express#readme",
+  "bugs": "https://github.com/natura-cosmeticos/natura-express/issues",
   "license": "MIT"
 }
